@@ -1,0 +1,28 @@
+PODS:
+  - FastDarkMode (0.1.0)
+  - FastExtension (0.1.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - FastDarkMode (from `../`)
+  - FastExtension (from `/Volumes/SStudio/TheStudio/OpenSource/FastExtension`)
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  FastDarkMode:
+    :path: "../"
+  FastExtension:
+    :path: "/Volumes/SStudio/TheStudio/OpenSource/FastExtension"
+
+SPEC CHECKSUMS:
+  FastDarkMode: 4a4d4be89c226c289817fd1d7eba2c784b908d0b
+  FastExtension: adf21c62d514be110c9a7cf911472d0dde8a536c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 7c69cd78a240071417849c49856b3e817044740e
+
+COCOAPODS: 1.11.3

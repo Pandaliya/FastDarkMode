@@ -1,6 +1,13 @@
-use_frameworks!
-target 'FastDarkMode_Tests' do
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '12.0'
+
+target 'Example' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
   pod 'FastDarkMode', :path => '../'
-  
-  
+
+  pod 'FastExtension', :path => "/Volumes/SStudio/TheStudio/OpenSource/FastExtension"
+  pod 'SnapKit', '~> 5.6.0'
+
 end

@@ -9,34 +9,28 @@
 Pod::Spec.new do |s|
   s.name             = 'FastDarkMode'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of FastDarkMode.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = '快速适配夜间模式'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+快速适配夜间模式
                        DESC
 
   s.homepage         = 'https://github.com/zhangpan/FastDarkMode'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zhangpan' => 'zhangpan@cls.cn' }
   s.source           = { :git => 'https://github.com/zhangpan/FastDarkMode.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.swift_versions = ['5.0']
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'FastDarkMode/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'FastDarkMode' => ['FastDarkMode/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'FastDarkMode' => ['FastDarkMode/Assets/*.{xib,png,xcassets}']
+  }
+  
+  s.frameworks = 'UIKit', 'Foundation'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

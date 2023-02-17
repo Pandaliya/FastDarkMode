@@ -1,0 +1,35 @@
+{
+  "name": "FastDarkMode",
+  "version": "0.1.0",
+  "summary": "快速适配夜间模式",
+  "description": "快速适配夜间模式",
+  "homepage": "https://github.com/zhangpan/FastDarkMode",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhangpan": "zhangpan@cls.cn"
+  },
+  "source": {
+    "git": "https://github.com/zhangpan/FastDarkMode.git",
+    "tag": "0.1.0"
+  },
+  "swift_versions": [
+    "5.0"
+  ],
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "FastDarkMode/Classes/**/*",
+  "resource_bundles": {
+    "FastDarkMode": [
+      "FastDarkMode/Assets/*.{xib,png,xcassets}"
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
+  "swift_version": "5.0"
+}

@@ -1,0 +1,6 @@
+framework module FastDarkMode {
+  umbrella header "FastDarkMode-umbrella.h"
+
+  export *
+  module * { export * }
+}
