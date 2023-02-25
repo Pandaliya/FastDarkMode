@@ -29,36 +29,31 @@ public protocol FSModeProtocol {
     /// 次级背景色
     var modeSubBackground: UIColor { get }
     
-    /// 前景色
-    var modeForeground: UIColor { get }
+    /// 卡片色
+    var modeCardBackground: UIColor { get }
     
-    /// 提示颜色（分割线，无法点击提示等）
-    var modeHint: UIColor { get }
+    /// 提示颜色
+    var modeHintBackground: UIColor { get }
     
     /// 分割线颜色
     var modeLine: UIColor { get }
     
     // MARK: - 文字颜色
+    /// 标题颜色
+    var modeTitle: UIColor { get }
     
-    /// 正文/标题颜色
+    /// 正文颜色
     var modeText: UIColor { get }
     
     /// 提示颜色
     var modeHintText: UIColor { get }
     
-    /// 正文颜色
+    /// 必要柔和的正文颜色
     var modeSoftText: UIColor { get }
-    
-    /// 前台文本颜色（针对有背景色的文本）
-    var modeFrontText: UIColor { get }
 
-    // MARK: - 彩色
-    
+    // MARK: - 强调色
     /// 可点击强调色
     var touchColor: UIColor { get }
-    
-    /// 不可点击强调色
-    var unenableColor: UIColor { get }
     
     /// 红色提示
     var modeRed: UIColor { get }
@@ -68,7 +63,7 @@ public protocol FSModeProtocol {
 }
 
 
-extension FSModeProtocol {
+public extension FSModeProtocol {
     func color(_ key: String) -> UIColor? {
         return self.colorsMap[key]
     }
@@ -77,19 +72,18 @@ extension FSModeProtocol {
     var themeColor: UIColor { return .systemOrange }
     var lightThemeColor: UIColor { return .systemOrange }
     
+    var modeTitle: UIColor { return .white }
     var modeText: UIColor { return .black }
     var modeSoftText: UIColor { return .darkGray }
     var modeHintText: UIColor { return .lightGray }
-    var modeFrontText: UIColor { return .white }
     
-    var modeHint: UIColor { return .lightGray }
     var modeBackground: UIColor { return .white}
     var modeSubBackground: UIColor { return UIColor.init(white: 245/255, alpha: 1) }
-    var modeForeground: UIColor { return .white }
+    var modeCardBackground: UIColor { return .white }
+    var modeHintBackground: UIColor { return .lightGray }
     var modeLine: UIColor { return UIColor.init(white: 0.92, alpha: 1.0) }
     
     var touchColor: UIColor { return .orange }
-    var unenableColor: UIColor { return UIColor.init(white: 0.88, alpha: 1.0) }
     var modeRed: UIColor { return UIColor.init(red: 235/255.0, green: 20/255.0, blue: 20/255.0, alpha: 1) }
     var modeGreen: UIColor { return UIColor.init(red: 73/255.0, green: 160/255.0, blue: 0, alpha: 1) }
 }

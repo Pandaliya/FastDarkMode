@@ -6,6 +6,8 @@ public enum FMStyleMode: Int {
     case dark = 2
 }
 
+public let FMM: FSModeManager = FSModeManager.shared
+
 final public class FSModeManager {
     public static var shared: FSModeManager = {
         let sha = FSModeManager()
@@ -15,6 +17,8 @@ final public class FSModeManager {
     
     var mainWindow: UIWindow? = nil
     var mode: FSModeProtocol = FSModeDefault()
+    
+    public var imageNameTile: String = ""
     
     public func config(window: UIWindow, mode: FSModeProtocol? = nil) {
         if let m = mode {
@@ -84,6 +88,21 @@ final public class FSModeManager {
                 window.overrideUserInterfaceStyle = .unspecified
                 break
             }
+        }
+        
+        if #available(iOS 13.0, *) {
+            switch UITraitCollection.current.userInterfaceStyle {
+            case .light:
+                self.imageNameTile = mode.imageNameTile
+            case .dark:
+                self.imageNameTile = mode.imageNameTile + "_dark"
+            case .unspecified:
+                self.imageNameTile = mode.imageNameTile
+            @unknown default:
+                break
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     
