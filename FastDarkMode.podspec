@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/zhangpan/FastDarkMode.git', :tag => s.version.to_s }
 
   s.swift_versions = ['5.0']
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'FastDarkMode/Classes/**/*'
   

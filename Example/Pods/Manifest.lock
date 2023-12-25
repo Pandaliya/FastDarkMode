@@ -19,10 +19,10 @@ EXTERNAL SOURCES:
     :path: "/Volumes/SStudio/TheStudio/OpenSource/FastExtension"
 
 SPEC CHECKSUMS:
-  FastDarkMode: 4a4d4be89c226c289817fd1d7eba2c784b908d0b
-  FastExtension: adf21c62d514be110c9a7cf911472d0dde8a536c
+  FastDarkMode: 1438ac10225159b09c0493fd342cbb887391ffcf
+  FastExtension: 59c1d7ec240741547ecb3a4bf6ff59154e36b77c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 7c69cd78a240071417849c49856b3e817044740e
+PODFILE CHECKSUM: bc87acf9655a68f7c2ce2effc82ce1efce057ad4
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3
