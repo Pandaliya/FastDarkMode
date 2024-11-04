@@ -60,6 +60,8 @@ public protocol FSModeProtocol {
     
     /// 绿色提示
     var modeGreen: UIColor { get }
+    
+    func configTheme(_ color: UIColor, light: UIColor)
 }
 
 
@@ -72,18 +74,20 @@ public extension FSModeProtocol {
     var themeColor: UIColor { return .systemOrange }
     var lightThemeColor: UIColor { return .systemOrange }
     
-    var modeTitle: UIColor { return .white }
-    var modeText: UIColor { return .black }
-    var modeSoftText: UIColor { return .darkGray }
-    var modeHintText: UIColor { return .lightGray }
+    var modeTitle: UIColor { return UIColor.modeBundleColor(name: "text_title_color") }
+    var modeText: UIColor { return UIColor.modeBundleColor(name: "text_color") }
+    var modeSoftText: UIColor { return UIColor.modeBundleColor(name: "text_soft_color") }
+    var modeHintText: UIColor { return UIColor.modeBundleColor(name: "alpha_50_color") }
     
-    var modeBackground: UIColor { return .white}
-    var modeSubBackground: UIColor { return UIColor.init(white: 245/255, alpha: 1) }
-    var modeCardBackground: UIColor { return .white }
-    var modeHintBackground: UIColor { return .lightGray }
-    var modeLine: UIColor { return UIColor.init(white: 0.92, alpha: 1.0) }
+    var modeBackground: UIColor { return UIColor.modeBundleColor(name: "bg_color") }
+    var modeSubBackground: UIColor { return UIColor.modeBundleColor(name: "bg_sub_color") }
+    var modeCardBackground: UIColor { return UIColor.modeBundleColor(name: "bg_card_color") }
+    var modeHintBackground: UIColor { return UIColor.modeBundleColor(name: "bg_hint_color") }
+    var modeLine: UIColor { return UIColor.modeBundleColor(name: "bg_line_color") }
     
-    var touchColor: UIColor { return .orange }
-    var modeRed: UIColor { return UIColor.init(red: 235/255.0, green: 20/255.0, blue: 20/255.0, alpha: 1) }
-    var modeGreen: UIColor { return UIColor.init(red: 73/255.0, green: 160/255.0, blue: 0, alpha: 1) }
+    var touchColor: UIColor { return UIColor.modeBundleColor(name: "accent_blue") }
+    var modeRed: UIColor { return UIColor.modeBundleColor(name: "accent_red") }
+    var modeGreen: UIColor { return UIColor.modeBundleColor(name: "accent_green") }
+    
+    func configTheme(_ color: UIColor, light: UIColor) {}
 }

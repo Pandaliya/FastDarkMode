@@ -6,7 +6,7 @@ target 'FDMExample' do
   use_frameworks!
   
   pod 'FastDarkMode', :path => '../'
-  pod 'FastExtension', :path => "/Volumes/SStudio/TheStudio/OpenSource/FastExtension"
+  pod 'FastExtension', :path => "/Volumes/SStudio/FFunion/StoneAge/FastExtension"
   pod 'SnapKit', '~> 5.6.0'
 
 end

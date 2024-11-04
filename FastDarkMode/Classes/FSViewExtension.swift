@@ -20,7 +20,7 @@ extension FSModeDelegate {
 extension UIView: FSModeDelegate {
     public func modeDidChanged() {
         for view in self.subviews {
-            view.styleConfig()
+            view.modeDidChanged()
         }
         self.styleConfig()
     }

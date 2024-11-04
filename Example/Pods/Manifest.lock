@@ -5,7 +5,7 @@ PODS:
 
 DEPENDENCIES:
   - FastDarkMode (from `../`)
-  - FastExtension (from `/Volumes/SStudio/TheStudio/OpenSource/FastExtension`)
+  - FastExtension (from `/Volumes/SStudio/FFunion/StoneAge/FastExtension`)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
@@ -16,13 +16,13 @@ EXTERNAL SOURCES:
   FastDarkMode:
     :path: "../"
   FastExtension:
-    :path: "/Volumes/SStudio/TheStudio/OpenSource/FastExtension"
+    :path: "/Volumes/SStudio/FFunion/StoneAge/FastExtension"
 
 SPEC CHECKSUMS:
   FastDarkMode: 1438ac10225159b09c0493fd342cbb887391ffcf
   FastExtension: 59c1d7ec240741547ecb3a4bf6ff59154e36b77c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: bc87acf9655a68f7c2ce2effc82ce1efce057ad4
+PODFILE CHECKSUM: 7913e7feb5d8e0a7523c51a4c586ce25a0ee7157
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

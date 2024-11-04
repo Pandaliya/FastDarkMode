@@ -42,6 +42,10 @@ public extension UIColor {
         return ModeManager.mode.modeLine
     }
     
+    static var modeCard: UIColor {
+        return ModeManager.mode.modeCardBackground
+    }
+    
     // MARK: - 文字颜色
     static var modeTitle: UIColor {
         return ModeManager.mode.modeTitle
@@ -71,6 +75,9 @@ public extension UIColor {
     static var modeGreen: UIColor {
         return ModeManager.mode.modeGreen
     }
+    
+    // MAKR: - 动态颜色
+    
 }
 
 

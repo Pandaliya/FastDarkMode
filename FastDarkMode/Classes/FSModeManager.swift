@@ -7,20 +7,33 @@ public enum FMStyleMode: Int {
 }
 
 public let FMM: FSModeManager = FSModeManager.shared
+public extension Notification.Name {
+    static let FSModeChanged = Notification.Name("FAST_DARK_MODE_CHANGED")
+}
 
 final public class FSModeManager {
     public static var shared: FSModeManager = {
         let sha = FSModeManager()
         return sha
     }()
-    private init() {}
+    private init() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAccessibilityChange),
+            name: UIAccessibility.darkerSystemColorsStatusDidChangeNotification,
+            object: nil
+        )
+    }
     
-    var mainWindow: UIWindow? = nil
-    var mode: FSModeProtocol = FSModeDefault()
+    public var mainWindow: UIWindow? = nil
+    public var mode: FSModeProtocol = FSModeDefault()
+    public var isDarkMode: Bool {
+        return self.mainWindow?.traitCollection.userInterfaceStyle == .dark
+    }
     
     public var imageNameTile: String = ""
     
-    public func config(window: UIWindow, mode: FSModeProtocol? = nil) {
+    public func configLaunch(window: UIWindow, mode: FSModeProtocol? = nil) {
         if let m = mode {
             self.mode = m
         }
@@ -31,11 +44,11 @@ final public class FSModeManager {
     public func updateMode(style: FMStyleMode, mode: FSModeProtocol? = nil, showAnimate: Bool = true) {
         var styleChanged: Bool = false
         
-        
         if let m = mode {
             self.mode = m
             styleChanged = true
         }
+        
         if self.modeStyle != style {
             self.modeStyle = style
             UserDefaults.standard.set(style.rawValue, forKey: kStyleMode)
@@ -44,12 +57,17 @@ final public class FSModeManager {
         }
         
         if styleChanged {
-            if showAnimate {
-                self.showModeChangeAnimate()
-            }
-            self.mainWindow?.modeDidChanged()
-            self.configMainWindow()
+            self.changeUIMode(showAnimate: showAnimate)
         }
+    }
+    
+    func changeUIMode(showAnimate: Bool) {
+        if showAnimate {
+            self.showModeChangeAnimate()
+        }
+        self.configMainWindow()
+        NotificationCenter.default.post(name: .FSModeChanged, object: nil)
+        self.mainWindow?.modeDidChanged()
     }
     
     // 模式切换动画（使黑夜/白天模式切换更顺滑）
@@ -106,6 +124,16 @@ final public class FSModeManager {
         }
     }
     
+    //
+    @objc func handleAccessibilityChange() {
+        // 在这里处理系统颜色设置的变化
+        debugPrint("FastDarkMode: handleAccessibilityChange-\(UITraitCollection.current.userInterfaceStyle)")
+        if self.modeStyle == .auto {
+            self.changeUIMode(showAnimate: false)
+        }
+    }
+    
+    //
     private(set) lazy var modeStyle: FMStyleMode = {
         let rawType = UserDefaults.standard.integer(forKey: kStyleMode)
         if let ms = FMStyleMode.init(rawValue: rawType) {

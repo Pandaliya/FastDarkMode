@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FSModeManager.shared.config(window: self.window!)
-        
         makeLaunchController()
         self.window?.makeKeyAndVisible()
     }

@@ -20,6 +20,10 @@ it, simply add the following line to your Podfile:
 pod 'FastDarkMode'
 ```
 
+## 使用
+
+
+
 ## Author
 
 zhangpan, zhangpan@cls.cn
