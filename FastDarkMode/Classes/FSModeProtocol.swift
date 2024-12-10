@@ -59,7 +59,10 @@ public protocol FSModeProtocol {
     var modeRed: UIColor { get }
     
     /// 绿色提示
-    var modeGreen: UIColor { get }
+    var modeGreen: UIColor { get } 
+    
+    /// 黄色提示
+    var modeYellow: UIColor { get }
     
     func configTheme(_ color: UIColor, light: UIColor)
 }

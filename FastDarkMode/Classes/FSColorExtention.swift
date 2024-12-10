@@ -76,8 +76,21 @@ public extension UIColor {
         return ModeManager.mode.modeGreen
     }
     
+    static var modeYellow: UIColor {
+        return ModeManager.mode.modeYellow
+    }
+    
     // MAKR: - 动态颜色
     
+    
+    // MARK: - 统一颜色
+    static var indictorBackgroudColor: UIColor {
+        return UIColor.init(red: 67/255.0, green: 73/255.0, blue: 84/255.0, alpha: 1)
+    }
+    
+    static var indictorTextColor: UIColor {
+        return UIColor.init(white: 1, alpha: 0.9)
+    }
 }
 
 
