@@ -1,6 +1,6 @@
 // Zhangpan
 let kStyleMode = "fs_style_mode_select"
-public enum FMStyleMode: Int {
+public enum FMStyleMode: Int, CaseIterable {
     case auto = 0
     case light = 1
     case dark = 2
@@ -134,7 +134,7 @@ final public class FSModeManager {
     }
     
     //
-    private(set) lazy var modeStyle: FMStyleMode = {
+    public private(set) lazy var modeStyle: FMStyleMode = {
         let rawType = UserDefaults.standard.integer(forKey: kStyleMode)
         if let ms = FMStyleMode.init(rawValue: rawType) {
             return ms
