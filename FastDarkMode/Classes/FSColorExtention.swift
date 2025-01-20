@@ -80,6 +80,10 @@ public extension UIColor {
         return ModeManager.mode.modeYellow
     }
     
+    static var modeOrange: UIColor {
+        return ModeManager.mode.modeOrange
+    }
+    
     // MAKR: - 动态颜色
     
     

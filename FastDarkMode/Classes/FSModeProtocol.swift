@@ -64,6 +64,9 @@ public protocol FSModeProtocol {
     /// 黄色提示
     var modeYellow: UIColor { get }
     
+    /// 橘色提示
+    var modeOrange: UIColor { get }
+    
     func configTheme(_ color: UIColor, light: UIColor)
 }
 
@@ -91,6 +94,7 @@ public extension FSModeProtocol {
     var touchColor: UIColor { return UIColor.modeBundleColor(name: "accent_blue") }
     var modeRed: UIColor { return UIColor.modeBundleColor(name: "accent_red") }
     var modeGreen: UIColor { return UIColor.modeBundleColor(name: "accent_green") }
+    var modeOrange: UIColor { return UIColor.modeBundleColor(name: "accent_orange") }
     
     func configTheme(_ color: UIColor, light: UIColor) {}
 }
