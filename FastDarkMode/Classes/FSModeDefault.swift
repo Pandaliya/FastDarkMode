@@ -8,6 +8,10 @@
 import Foundation
 
 open class FSModeDefault: FSModeProtocol {
+    public init() {
+        self.subConfig()
+    }
+    
     open var colorsMap: [String : UIColor] = [:]
     
     // MARK: - 背景色
@@ -37,4 +41,7 @@ open class FSModeDefault: FSModeProtocol {
         self.themeColor = color
         self.lightThemeColor = light
     }
+    
+    // 子类实现
+    open func subConfig() {}
 }
