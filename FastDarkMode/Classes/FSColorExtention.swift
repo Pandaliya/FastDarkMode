@@ -86,6 +86,10 @@ public extension UIColor {
     
     // MAKR: - 动态颜色
     
+    static func autoColor(light: UIColor, dark: UIColor? = nil) -> UIColor {
+        return FMM.isDarkMode ? (dark ?? light) : light
+    }
+    
     
     // MARK: - 统一颜色
     static var indictorBackgroudColor: UIColor {
